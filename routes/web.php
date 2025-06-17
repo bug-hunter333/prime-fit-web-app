@@ -65,9 +65,6 @@ Route::post('/checkout/gloves', [GloveCartController::class, 'processCheckout'])
 
 
 
-
-
-
 Route::post('/cart/yoga/add', [YogaCartController::class, 'add'])->name('yoga.add');
 Route::get('/cart/yoga/{id}', [YogaCartController::class, 'remove'])->name('yoga.remove');
 Route::get('/cart/yoga', [YogaCartController::class, 'display'])->name('yoga.display');

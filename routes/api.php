@@ -13,6 +13,9 @@ use App\Http\Controllers\YogaController;
 use App\Http\Controllers\RackController;
 
 
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 Route::get('/dumbells', [ProductdumbellController::class, 'index'])->name('dumbells.index');
 Route::get('/barbells', [ProductbarbellController::class, 'index'])->name('barbells.index');
@@ -21,6 +24,10 @@ Route::get('/yoga', [productYogaController::class, 'index'])->name('yoga.index')
 Route::get('/racks', [productRackController::class, 'index'])->name('racks.index');
 
 
+
+Route::post('/register', [RegisteredUserController::class, 'store']);
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth:sanctum');
 
 
 
